@@ -7,6 +7,17 @@
   />
   <!-- <mat-error *ngIf="form.get('email').invalid">got an error!</mat-error> -->
 </mat-form-field>
+<br />
+
+<mat-form-field *ngIf="form">
+  <input
+    matInput
+    placeholder="Added Control"
+    [formControl]="addedControl"
+    [errorStateMatcher]="matcher"
+  />
+</mat-form-field>
+<br />
 
 <!-- <div>Invalid</div>
 {{ form.get('email').invalid }} -->
