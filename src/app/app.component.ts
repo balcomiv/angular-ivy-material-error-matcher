@@ -14,21 +14,26 @@ import { MyErrorStateMatcher } from './error-state-matcher';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  submitted = new Subject<void>();
+  // submitted = new Subject<void>();
 
   constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) {}
 
+  // form = this.fb.group({
+  //   email: ['', [Validators.required, Validators.email]],
+  // });
+
+  // useChildComponent = true;
+
+  // matcher = new MyErrorStateMatcher();
+
+  // submit() {
+  //   console.log('submitted!');
+  //   // this.cd.detectChanges();
+  //   this.submitted.next();
+  // }
+
   form = this.fb.group({
+    testControl: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
   });
-
-  useChildComponent = true;
-
-  matcher = new MyErrorStateMatcher();
-
-  submit() {
-    console.log('submitted!');
-    // this.cd.detectChanges();
-    this.submitted.next();
-  }
 }

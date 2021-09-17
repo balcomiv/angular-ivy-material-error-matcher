@@ -1,4 +1,4 @@
-<p>
+<!-- <p>
   For each form, try submitting without touching the e-mail input. The one that
   passes the form group down to a child component does not show an error.
 </p>
@@ -29,4 +29,16 @@
     </mat-form-field>
     <button mat-button type="submit">Submit</button>
   </form>
-</div>
+</div> -->
+
+<h2>Wrapper</h2>
+<form [formGroup]="form">
+  <app-child [form]="form"></app-child>
+
+  <mat-form-field>
+    <input matInput placeholder="Email" formControlName="email" required />
+    <mat-error *ngIf="form.get('email').invalid">got an error!</mat-error>
+  </mat-form-field>
+
+  <button type="submit">Submit</button>
+</form>

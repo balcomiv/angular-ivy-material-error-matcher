@@ -14,31 +14,31 @@ import { MyErrorStateMatcher } from '../error-state-matcher';
   styleUrls: ['./child.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ChildComponent implements OnInit {
+export class ChildComponent {
+  // implements OnInit {
   @Input() form: FormGroup;
+  // @Input() submitted;
+  // matcher = new MyErrorStateMatcher();
+  // get emailFormControl() {
+  //   return this.form?.get('email') as FormControl;
+  // }
+  // get addedControl() {
+  //   return this.form.get('addedControl') as FormControl;
+  // }
+  // constructor(private cd: ChangeDetectorRef) {
+  //   setTimeout(() => {
+  //     // this.cd.markForCheck();
+  //   });
+  // }
+  // ngOnInit() {
+  //   this.form?.addControl(
+  //     'addedControl',
+  //     new FormControl('', Validators.required)
+  //   );
+  // }
 
-  @Input() submitted;
-
-  matcher = new MyErrorStateMatcher();
-
-  get emailFormControl() {
-    return this.form?.get('email') as FormControl;
-  }
-
-  get addedControl() {
-    return this.form.get('addedControl') as FormControl;
-  }
-
-  constructor(private cd: ChangeDetectorRef) {
-    setTimeout(() => {
-      // this.cd.markForCheck();
-    });
-  }
-
-  ngOnInit() {
-    this.form?.addControl(
-      'addedControl',
-      new FormControl('', Validators.required)
-    );
+  // test2 = new FormControl(null);
+  get test2() {
+    return this.form.get('testControl') as FormControl;
   }
 }

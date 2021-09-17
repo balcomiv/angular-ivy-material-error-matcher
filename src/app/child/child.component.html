@@ -1,11 +1,11 @@
-<mat-form-field *ngIf="form">
+<!-- <mat-form-field *ngIf="form">
   <input
     matInput
     placeholder="Email"
     [formControl]="emailFormControl"
     [errorStateMatcher]="matcher"
   />
-  <!-- <mat-error *ngIf="form.get('email').invalid">got an error!</mat-error> -->
+  <mat-error *ngIf="form.get('email').invalid">got an error!</mat-error>
 </mat-form-field>
 <br />
 
@@ -17,7 +17,12 @@
     [errorStateMatcher]="matcher"
   />
 </mat-form-field>
-<br />
+<br /> -->
 
 <!-- <div>Invalid</div>
 {{ form.get('email').invalid }} -->
+
+<mat-form-field floatLabel="always" appearance="outline">
+  <mat-label>Test 2</mat-label>
+  <input matInput [formControl]="test2" required />
+</mat-form-field>
